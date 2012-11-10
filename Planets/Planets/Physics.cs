@@ -23,21 +23,21 @@ namespace Planets
         }
 
         public static float getGravity(Spaceship s,Planet p){
-            return (p.getMass() * s.getMass())/Math.Pow(getDistance(s,p),2);
+            return (p.getMass() * s.getMass())/(float)Math.Pow(getDistance(s,p),2);
         }
 
         private static float getDistance(Spaceship s, Planet p){
-            return Math.Sqrt(Math.Pow(p.getX() - s.getX(), 2) + Math.Pow(p.getY() - s.getY(), 2));
+            return (float)Math.Sqrt((float)Math.Pow(p.getX() - s.getX(), 2) + (float)Math.Pow(p.getY() - s.getY(), 2));
         }
 
         private static float Xacceleration(Spaceship s, Planet p)
         {
-            return p.getMass() * (p.getX() - s.getX()) / Math.Pow(getDistance(s, p), 3);
+            return p.getMass() * (p.getX() - s.getX()) / (float)Math.Pow(getDistance(s, p), 3);
         }
 
         private static float Yacceleration(Spaceship s, Planet p)
         {
-            return p.getMass() * (p.getY() - s.getY()) / Math.Pow(getDistance(s, p), 3);
+            return p.getMass() * (p.getY() - s.getY()) / (float)Math.Pow(getDistance(s, p), 3);
         }
 
 
