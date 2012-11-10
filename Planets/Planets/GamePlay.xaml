@@ -7,12 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
+<<<<<<< HEAD
         <ImageSource x:Key="ImageSource1">ms-appx:///Assets/space.jpg</ImageSource>
+=======
+        <ImageSource x:Key="ImageSource1">ms-appx:///Assets/Space.jpg</ImageSource>
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
     </Page.Resources>
 
     <Grid x:Name="ContentPanel">
         <Grid.Background>
+<<<<<<< HEAD
             <ImageBrush ImageSource="Assets/bg.jpg"/>
+=======
+            <ImageBrush ImageSource="{StaticResource ImageSource1}"/>
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
         </Grid.Background>
     </Grid>
 

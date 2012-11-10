@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Shapes;
+<<<<<<< HEAD
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
+=======
+using Windows.UI.Xaml.Media;
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
 
 namespace Planets
 {
@@ -18,12 +22,18 @@ namespace Planets
     {
         private Vector position;
         public Ellipse ellipse;
+<<<<<<< HEAD
         public Image image = null;
+=======
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
         private float mass;
         private Color color;
         public float radius;
         public bool isEarth;
+<<<<<<< HEAD
         public static string[] images = {"mars.png", "jupiter.png", "venus.png", "moon.png", "mercury.png" };
+=======
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
 
         //constructor, sets all variables for a planet
         public Planet(Random random, int minradius, int maxradius, int ylayer, bool isEarth=false)
@@ -33,11 +43,16 @@ namespace Planets
             //radius
             radius = random.Next(minradius, maxradius);
             //position
+<<<<<<< HEAD
             position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + (int)radius * 4, (int)Window.Current.Bounds.Width) - (int)radius * 4, -(int)Window.Current.Bounds.Height + radius * (2*ylayer + 2));
+=======
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + maxradius, (int)Window.Current.Bounds.Width) - maxradius, -(int)Window.Current.Bounds.Height + 200 * (ylayer - 1));
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
             //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
             //mass
              mass = radius * 5000000;
             //earth?
+<<<<<<< HEAD
             this.isEarth = isEarth;
             if (isEarth)
             {
@@ -66,13 +81,21 @@ namespace Planets
                 image.Height = (int)radius * 2;
                 image.Width = (int)radius * 2;
             }
+=======
+            isEarth = this.isEarth;
+            if (isEarth) color = Colors.White;
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
 
             ellipse = new Ellipse();
             ellipse.Width = 2 * radius;
             ellipse.Height = 2 * radius;
             ellipse.Margin = new Thickness(position.x, position.y, 0, 0);
+<<<<<<< HEAD
             ellipse.StrokeThickness = 7.0;
             ellipse.Stroke = new SolidColorBrush(color);
+=======
+            ellipse.Fill = new SolidColorBrush(color);
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
         }
         public void setPosition(Vector p)
         {

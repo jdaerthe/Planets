@@ -5,6 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80222855-B5CE-4E79-8F2D-476D5CB3FDEF}</ProjectGuid>
+    <ProjectGuid>{4FE147ED-B9E1-4904-903D-72D9470F781C}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Planets</RootNamespace>
@@ -129,6 +130,17 @@
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Vector.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Physics.cs" />
+    <Compile Include="Planet.cs" />
+    <Compile Include="Running.xaml.cs">
+      <DependentUpon>Running.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spaceship.cs" />
     <Compile Include="World.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +164,9 @@
     <Content Include="Assets\mars.png" />
     <Content Include="Assets\space2.jpg" />
     <Content Include="Assets\earth.png" />
+    <None Include="Planets_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\rocket.png" />
     <Content Include="Assets\SmallLogo.png" />
@@ -164,6 +179,9 @@
     <Page Include="GamePlay.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    <Page Include="GamePlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +200,13 @@
     <Page Include="SplitPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Running.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

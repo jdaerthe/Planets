@@ -11,7 +11,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -20,17 +19,11 @@ namespace Planets
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class GamePlay : Page
+    public sealed partial class Running : Page
     {
-        Game game;
-        public GamePlay()
+        public Running()
         {
-<<<<<<< HEAD
             this.InitializeComponent();
-=======
-           // this.InitializeComponent();
->>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
-            game = new Game(this);
         }
 
         /// <summary>
@@ -40,19 +33,6 @@ namespace Planets
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
-<<<<<<< HEAD
-            game.setup();
-=======
-            if (_contentLoaded == true) game.setup();
->>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
-            
-        }
-
-        public Grid ContentPanel1
-        {
-            get { return ContentPanel; }
-            set { ContentPanel = value; }
         }
     }
 }

@@ -20,17 +20,11 @@ namespace Planets
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class GamePlay : Page
+    public sealed partial class MainPage : Page
     {
-        Game game;
-        public GamePlay()
+        public MainPage()
         {
-<<<<<<< HEAD
-            this.InitializeComponent();
-=======
-           // this.InitializeComponent();
->>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
-            game = new Game(this);
+            //this.InitializeComponent();
         }
 
         /// <summary>
@@ -40,19 +34,13 @@ namespace Planets
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
-<<<<<<< HEAD
-            game.setup();
-=======
-            if (_contentLoaded == true) game.setup();
->>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
-            
-        }
-
-        public Grid ContentPanel1
-        {
-            get { return ContentPanel; }
-            set { ContentPanel = value; }
+            Frame myframe = new Frame();
+            Window.Current.Content = myframe;
+            if (!myframe.Navigate(typeof(GamePlay)))
+            {
+                throw new Exception("Failed to create initial page");
+            }
+            Window.Current.Activate();
         }
     }
 }
