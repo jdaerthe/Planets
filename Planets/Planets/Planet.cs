@@ -27,11 +27,11 @@ namespace Planets
         {
             return position;
         }
-        public void setX(int x)
+        public void setX(float x)
         {
             this.position.x = x;
         }
-        public void setY(int y)
+        public void setY(float y)
         {
             this.position.y = y;
         }

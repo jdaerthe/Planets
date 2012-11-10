@@ -23,7 +23,7 @@ namespace Planets
         }
 
         public static float getGravity(Spaceship s,Planet p){
-            return (p.getMass() * s.getMass())/Math.Pow(getDistance(s,p),2));
+            return (p.getMass() * s.getMass())/Math.Pow(getDistance(s,p),2);
         }
 
         private static float getDistance(Spaceship s, Planet p){
