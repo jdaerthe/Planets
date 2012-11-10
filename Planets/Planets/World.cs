@@ -11,7 +11,7 @@ namespace Planets
         private Spaceship spaceship;
         private List<Planet> planets;
         private float time;
-        private float timestep = 0.1;
+        private float timestep = 0.1f;
         
         public World() {
             spaceship = new Spaceship();
@@ -22,7 +22,7 @@ namespace Planets
         public void step()
         {
             time += timestep;
-            spaceship.setPosition(Physics.getNextLocation(spaceship, planets, timestep));
+            spaceship.setPosition(Physics.getNewPosition(spaceship, planets, timestep));
         }
 
         public void setSpaceship(Spaceship s)
@@ -37,6 +37,10 @@ namespace Planets
         public void addPlanet(Planet p)
         {
             planets.Add(p);
+        }
+        public float getTime()
+        {
+            return time;
         }
     }
 }

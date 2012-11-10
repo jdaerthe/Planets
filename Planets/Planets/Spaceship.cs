@@ -35,11 +35,11 @@ namespace Planets
         {
             this.position.y = y;
         }
-        public int getX()
+        public float getX()
         {
             return position.x;
         }
-        public int getY()
+        public float getY()
         {
             return position.y;
         }
