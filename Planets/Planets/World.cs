@@ -10,8 +10,8 @@ namespace Planets
     {
         private Spaceship spaceship;
         private List<Planet> planets;
-        private double time;
-        private double timestep = 0.1;
+        private float time;
+        private float timestep = 0.1;
         
         public World() {
             spaceship = new Spaceship();
@@ -29,7 +29,7 @@ namespace Planets
         {
             spaceship = s;
         }
-        public void getSpaceship()
+        public Spaceship getSpaceship()
         {
             return spaceship;
         }

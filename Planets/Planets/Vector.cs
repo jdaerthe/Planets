@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Planets
 {
-    class Position
+    class Vector
     {
-        public int x;
-        public int y;
-        public Position(int x, int y)
+        public float x;
+        public float y;
+        public Vector(float x, float y)
         {
             this.x = x;
             this.y = y;
