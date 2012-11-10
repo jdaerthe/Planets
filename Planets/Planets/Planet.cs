@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage;
+using Windows.Storage.Streams;
 
 namespace Planets
 {
@@ -15,10 +18,12 @@ namespace Planets
     {
         private Vector position;
         public Ellipse ellipse;
+        public Image image = null;
         private float mass;
         private Color color;
         public float radius;
         public bool isEarth;
+        public static string[] images = {"mars.png", "jupiter.png", "saturn.png", "venus.png" };
 
         //constructor, sets all variables for a planet
         public Planet(Random random, int minradius, int maxradius, int ylayer, bool isEarth=false)
@@ -34,13 +39,46 @@ namespace Planets
              mass = radius * 5000000;
             //earth?
             this.isEarth = isEarth;
-            if (isEarth) color = Colors.White;
+            if (isEarth)
+            {
+                image = new Image();
+                BitmapImage myBitmapImage = new BitmapImage();
+                myBitmapImage.UriSource = new Uri("ms-appx:///Assets/earth.png");
+
+                myBitmapImage.DecodePixelWidth = (int)radius * 2;
+                image.Source = myBitmapImage;
+                image.Margin = new Thickness(position.x, position.y, 0, 0);
+                image.Stretch = Stretch.Fill;
+                image.Height = (int)radius * 2;
+                image.Width = (int)radius * 2;
+            }
+            else
+            {
+                image = new Image();
+                BitmapImage myBitmapImage = new BitmapImage();
+                string name = images[random.Next(0, images.Count())];
+                myBitmapImage.UriSource = new Uri("ms-appx:///Assets/" + name);
+
+                myBitmapImage.DecodePixelWidth = (int)radius * 2;
+                image.Source = myBitmapImage;
+                image.Margin = new Thickness(position.x, position.y, 0, 0);
+                image.Stretch = Stretch.Fill;
+                image.Height = (int)radius * 2;
+                image.Width = (int)radius * 2;
+                if (name == "saturn.png")
+                {
+                    radius /= 2;
+                    image.Height = (int)radius * 2;
+                    image.Width = (int)radius * 4;
+                }
+            }
 
             ellipse = new Ellipse();
             ellipse.Width = 2 * radius;
             ellipse.Height = 2 * radius;
             ellipse.Margin = new Thickness(position.x, position.y, 0, 0);
-            ellipse.Fill = new SolidColorBrush(color);
+            ellipse.StrokeThickness = 7.0;
+            ellipse.Stroke = new SolidColorBrush(color);
         }
         public void setPosition(Vector p)
         {

@@ -12,7 +12,7 @@
 
     <Grid x:Name="ContentPanel">
         <Grid.Background>
-            <ImageBrush ImageSource="{StaticResource ImageSource1}"/>
+            <ImageBrush ImageSource="Assets/bg.jpg"/>
         </Grid.Background>
     </Grid>
 
