@@ -18,10 +18,13 @@ namespace Planets
         public Game(MainPage page)
         {
             random = new Random();
+            int minradius=30;
+            int maxradius=100;
             this.page = page;
             w = new World();
             w.setSpaceship(new Spaceship());
-            for (int i = -5; i < 6; i++) w.addPlanet(new Planet(random, 30, 50, i));
+            for (int i = -5; i < 6; i++) w.addPlanet(new Planet(random,minradius,maxradius));
+            w.addPlanet(new Planet(random,2*minradius,maxradius, true));
         }
         public void step(object s, object ev)
         {
@@ -30,14 +33,7 @@ namespace Planets
         }
 
         public void setup()
-<<<<<<< HEAD
-        {   
-=======
         {
-            timer.Tick += new EventHandler<object>(step);
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 5);
-            timer.Start();
->>>>>>> c43e676f032460922e39a23fec0778beb6c3c53c
             Graphics.drawWorld(page, w);
             page.Tapped += new TappedEventHandler(pageTapped_Tapped);
             
