@@ -20,6 +20,7 @@ namespace Planets
         public void step(object s, object ev)
         {
             w.step();
+            Graphics.drawWorld(w);
         }
 
         public void setup()
