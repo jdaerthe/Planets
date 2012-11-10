@@ -11,7 +11,7 @@ namespace Planets
         private Spaceship spaceship;
         private List<Planet> planets;
         private float time = 0;
-        private float timestep = 0.1f;
+        public static float timestep = 0.1f;
         
         public World() {
             planets = new List<Planet>();
