@@ -26,6 +26,27 @@ namespace Planets
             time += timestep;
             Vector newpos = Physics.getNewPosition(spaceship, planets, timestep);
             if (newpos != null) spaceship.setPosition(newpos);
+            else
+            {
+                foreach (Planet p in planets)
+                {
+                    if (p.isEarth && Physics.getDistance(spaceship, p) < p.radius)
+                    {
+                        youWin();
+                        return;
+                    }
+                }
+                youLoose();
+                return;
+            }
+        }
+
+        public void youWin()
+        {
+        }
+
+        public void youLoose()
+        {
         }
 
         public void setSpaceship(Spaceship s)
