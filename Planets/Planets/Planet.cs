@@ -17,9 +17,10 @@ namespace Planets
         private float mass;
         private Color color;
         public float radius;
+        public bool isEarth;
 
         //constructor, sets all variables for a planet
-        public Planet(Random random, int minradius, int maxradius, int ylayer)
+        public Planet(Random random, int minradius, int maxradius, bool isEarth=false)
         {
             //color
             color = Color.FromArgb((byte)0xff,(byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
@@ -29,7 +30,13 @@ namespace Planets
             //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), maxradius * (ylayer * 4));
             position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
             //mass
+<<<<<<< HEAD
+            mass = radius * 1000000;
+            //earth?
+            isEarth = this.isEarth;
+=======
             mass = radius * 5000000;
+>>>>>>> 6297675e55234e805f5c34b4a7c067461b8081c4
 
             ellipse = new Ellipse();
             ellipse.Width = 2 * radius;
