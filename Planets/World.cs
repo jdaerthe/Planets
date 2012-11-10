@@ -10,11 +10,19 @@ namespace Planets
     {
         private Spaceship spaceship;
         private List<Planet> planets;
+        private double time;
+        private double timestep = 0.1;
         
         public World() {
             spaceship = new Spaceship();
             planets = new List<Planet>();
-            Physics.getNetForce(spaceship, planets);
+            
+        }
+
+        public void step()
+        {
+            time += timestep;
+            spaceship.setPosition(Physics.getNextLocation(spaceship, planets, timestep));
         }
 
         public void setSpaceship(Spaceship s)
