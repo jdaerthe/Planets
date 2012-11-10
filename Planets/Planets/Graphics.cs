@@ -27,7 +27,9 @@ namespace Planets
         }
         public static void update(MainPage page, World w)
         {
-            w.getSpaceship().image.Margin = new Thickness(w.getSpaceship().getPosition().x, w.getSpaceship().getPosition().y, 0, 0);
+            Spaceship ship = w.getSpaceship();
+            ship.image.Margin = new Thickness(ship.getPosition().x, ship.getPosition().y, 0, 0);
+            ship.image.RenderTransform = new RotateTransform() { Angle = Math.Atan(ship.velocity.y / ship.velocity.x) };
         }
     }
 }
