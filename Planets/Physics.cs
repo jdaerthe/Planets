@@ -12,7 +12,9 @@ namespace Planets
         public static float getNetForce(Spaceship ship, List<Planet> planets){
             float totalForce=0;
             foreach (Planet p in planets){
-                   
+                float currForce = 0;
+                float gravity = p.getGravity();
+                float distance = p.getX()
             }
             return totalForce;
         }
