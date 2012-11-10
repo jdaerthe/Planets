@@ -139,6 +139,9 @@
     <None Include="Planets_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\earth2.png" />
+    <Content Include="Assets\mercury.png" />
+    <Content Include="Assets\moon.png" />
     <Content Include="Assets\venus.png" />
     <Content Include="Assets\saturn.png" />
     <Content Include="Assets\bg.jpg" />
