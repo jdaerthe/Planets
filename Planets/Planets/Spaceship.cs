@@ -21,18 +21,18 @@ namespace Planets
 
         public Spaceship()
         {
-            position = new Vector(0, (int)Window.Current.Bounds.Height - 30);
+            position = new Vector(0, (int)Window.Current.Bounds.Height - 600);
             velocity = new Vector(0, -1000);
             image = new Image();
             BitmapImage myBitmapImage = new BitmapImage();
-            myBitmapImage.UriSource = new Uri("ms-appx:///Assets/SmallLogo.png");
+            myBitmapImage.UriSource = new Uri("ms-appx:///Assets/Rocket.png");
 
-            myBitmapImage.DecodePixelWidth = 30;
+            myBitmapImage.DecodePixelWidth = 600;
             image.Source = myBitmapImage;
             image.Margin = new Thickness(position.x, position.y, 0, 0);
             image.Stretch = Stretch.Fill;
-            image.Height = 30;
-            image.Width = 30;
+            image.Height = 600;
+            image.Width = 600;
         }
         public void setPosition(Vector p)
         {

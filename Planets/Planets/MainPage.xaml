@@ -7,5 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="ContentPanel" Background="{StaticResource ApplicationPageBackgroundThemeBrush}"/>
+    <Grid x:Name="ContentPanel">
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/Space.jpg"/>
+        </Grid.Background>
+    </Grid>
 </Page>
