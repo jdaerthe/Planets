@@ -7,6 +7,7 @@ using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Shapes;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Planets
 {
@@ -27,12 +28,12 @@ namespace Planets
             //radius
             radius = random.Next(minradius, maxradius);
             //position
-            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + maxradius, (int)Window.Current.Bounds.Width) - maxradius, -(int)Window.Current.Bounds.Height + 200 * (ylayer - 1));
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + maxradius * 2, (int)Window.Current.Bounds.Width) - maxradius * 2, -(int)Window.Current.Bounds.Height + maxradius * 2 * (ylayer - 1));
             //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
             //mass
              mass = radius * 5000000;
             //earth?
-            isEarth = this.isEarth;
+            this.isEarth = isEarth;
             if (isEarth) color = Colors.White;
 
             ellipse = new Ellipse();

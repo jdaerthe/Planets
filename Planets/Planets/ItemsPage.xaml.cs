@@ -58,7 +58,23 @@ namespace Planets
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
             var groupId = ((SampleDataGroup)e.ClickedItem).UniqueId;
-            this.Frame.Navigate(typeof(GamePlay), groupId);
+            switch (groupId)
+            {
+                case "GamePlay":
+                    this.Frame.Navigate(typeof(GamePlay), groupId);
+                    break;
+                case "FreePlay":
+                    this.Frame.Navigate(typeof(GamePlay), groupId);
+                    break;
+                case "Instructions":
+                    this.Frame.Navigate(typeof(GamePlay), groupId);
+                    break;
+                case "Live":
+                    this.Frame.Navigate(typeof(GamePlay), groupId);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
