@@ -20,19 +20,20 @@ namespace Planets
         public bool isEarth;
 
         //constructor, sets all variables for a planet
-        public Planet(Random random, int minradius, int maxradius, bool isEarth=false)
+        public Planet(Random random, int minradius, int maxradius, int ylayer, bool isEarth=false)
         {
             //color
             color = Color.FromArgb((byte)0xff,(byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
             //radius
             radius = random.Next(minradius, maxradius);
             //position
-            //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), maxradius * (ylayer * 4));
-            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), -(int)Window.Current.Bounds.Height + 200 * (ylayer - 1));
+            //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
             //mass
              mass = radius * 5000000;
             //earth?
             isEarth = this.isEarth;
+            if (isEarth) color = Colors.White;
 
             ellipse = new Ellipse();
             ellipse.Width = 2 * radius;
