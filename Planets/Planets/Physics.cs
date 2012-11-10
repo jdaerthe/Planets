@@ -14,25 +14,17 @@ namespace Planets
         {
             Vector acc = new Vector(0, 0);
             foreach (Planet p in planets){
-                acc = acc.plus(getAcceleration(ship, p));
-                //xAcc += Xacceleration(ship, p);
-                //yAcc += Yacceleration(ship, p);
+                Vector acc2 = getAcceleration(ship, p);
+                if (acc2 == null) return null;
+                acc = acc.plus(acc2);
             }
             ship.velocity = ship.velocity.plus(acc.times(time));
             return ship.getPosition().plus(ship.velocity.times(time));
-           // float xPos = ship.getX() + xAcc * (float)Math.Pow(time, 2);
-           // float yPos = ship.getY() + yAcc * (float)Math.Pow(time, 2);
-           // return new Vector(xPos, yPos);
+            
         }
 
-        //helper to get gravity between two objects
-        /*public static float getGravity(Spaceship s,Planet p)
-        {
-            return (p.getMass() * s.getMass())/(float)Math.Pow(getDistance(s,p),2);
-        }*/
-
         //helper to get distance between two objects
-        private static float getDistance(Spaceship s, Planet p){
+        private static float getDistance(Spaceship s, Planet p) {
             return (float)Math.Sqrt((float)Math.Pow(p.getX() - s.getX(), 2) + (float)Math.Pow(p.getY() - s.getY(), 2));
         }
 
@@ -50,8 +42,9 @@ namespace Planets
         private static Vector getAcceleration(Spaceship s, Planet p)
         {
             Vector distance = p.getPosition().minus(s.getPosition());
-            float d3 = (float)Math.Pow(distance.getMagnitude(), 3);
-            if (d3 < 50) return new Vector(0, 0);
+            float mag = distance.getMagnitude();
+            if (mag < p.radius) return null;
+            float d3 = (float)Math.Pow(mag, 3);
             return distance.times(p.getMass() / d3);
         }
 

@@ -16,7 +16,7 @@ namespace Planets
         public Ellipse ellipse;
         private float mass;
         private Color color;
-        private float radius;
+        public float radius;
 
         //constructor, sets all variables for a planet
         public Planet(Random random, int minradius, int maxradius, int ylayer)
@@ -26,7 +26,7 @@ namespace Planets
             //radius
             radius = random.Next(minradius, maxradius);
             //position
-            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), ylayer * maxradius * 2);
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), maxradius * (ylayer * 4));
             //mass
             mass = radius * 1000000;
 

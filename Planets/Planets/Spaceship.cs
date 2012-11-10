@@ -17,13 +17,12 @@ namespace Planets
         private Vector position;
         public Vector velocity;
         private Vector lastposition;
-        private float mass;
         public Image image;
 
         public Spaceship()
         {
             position = new Vector(0, (int)Window.Current.Bounds.Height - 30);
-            velocity = new Vector(0, 0);
+            velocity = new Vector(0, -1000);
             image = new Image();
             BitmapImage myBitmapImage = new BitmapImage();
             myBitmapImage.UriSource = new Uri("ms-appx:///Assets/SmallLogo.png");
