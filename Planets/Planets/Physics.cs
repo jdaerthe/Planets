@@ -12,23 +12,24 @@ namespace Planets
         //get a new position based on ship and planets configurations
         public static Vector getNewPosition(Spaceship ship, List<Planet> planets, float time)
         {
-            float xAcc = 0;
-            float yAcc = 0;
+            Vector acc = new Vector(0, 0);
             foreach (Planet p in planets){
-                xAcc += Xacceleration(ship, p);
-                yAcc += Yacceleration(ship, p);
+                acc = acc.plus(getAcceleration(ship, p));
+                //xAcc += Xacceleration(ship, p);
+                //yAcc += Yacceleration(ship, p);
             }
-
-            float xPos = xAcc * (float)Math.Pow(time, 2);
-            float yPos = yAcc * (float)Math.Pow(time, 2);
-            return new Vector(xPos,yPos);
+            ship.velocity = ship.velocity.plus(acc.times(time));
+            return ship.getPosition().plus(ship.velocity.times(time));
+           // float xPos = ship.getX() + xAcc * (float)Math.Pow(time, 2);
+           // float yPos = ship.getY() + yAcc * (float)Math.Pow(time, 2);
+           // return new Vector(xPos, yPos);
         }
 
         //helper to get gravity between two objects
-        public static float getGravity(Spaceship s,Planet p)
+        /*public static float getGravity(Spaceship s,Planet p)
         {
             return (p.getMass() * s.getMass())/(float)Math.Pow(getDistance(s,p),2);
-        }
+        }*/
 
         //helper to get distance between two objects
         private static float getDistance(Spaceship s, Planet p){
@@ -45,6 +46,13 @@ namespace Planets
         private static float Yacceleration(Spaceship s, Planet p)
         {
             return p.getMass() * (p.getY() - s.getY()) / (float)Math.Pow(getDistance(s, p), 3);
+        }
+        private static Vector getAcceleration(Spaceship s, Planet p)
+        {
+            Vector distance = p.getPosition().minus(s.getPosition());
+            float d3 = (float)Math.Pow(distance.getMagnitude(), 3);
+            if (d3 < 50) return new Vector(0, 0);
+            return distance.times(p.getMass() / d3);
         }
 
 

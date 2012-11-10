@@ -11,13 +11,16 @@ namespace Planets
         private Spaceship spaceship;
         private List<Planet> planets;
         private float time = 0;
-        public static float timestep = 0.1f;
+        public static float timestep = 0.03f;
         
         public World() {
             planets = new List<Planet>();
             
         }
-
+        public List<Planet> getPlanets()
+        {
+            return planets;
+        }
         public void step()
         {
             time += timestep;

@@ -10,26 +10,30 @@ namespace Planets
     class Game
     {
         private World w;
+        private MainPage page;
         private DispatcherTimer timer = new DispatcherTimer();
+        private Random random;
         
-        public Game()
+        public Game(MainPage page)
         {
+            random = new Random();
+            this.page = page;
             w = new World();
-            w.setSpaceship(new Spaceship(new Vector(200, 0)));
-            for (int i = 0; i < 10; i++) w.addPlanet(new Planet());
+            w.setSpaceship(new Spaceship());
+            for (int i = -5; i < 6; i++) w.addPlanet(new Planet(random, 50, 75, i));
         }
         public void step(object s, object ev)
         {
             w.step();
-            Graphics.update(w);
+            Graphics.update(page, w);
         }
 
         public void setup()
         {
             timer.Tick += new EventHandler<object>(step);
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
             timer.Start();
-            Graphics.drawWorld(w);
+            Graphics.drawWorld(page, w);
         }
         public World getWorld()
         {
