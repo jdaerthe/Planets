@@ -61,7 +61,7 @@ namespace Planets
             switch (groupId)
             {
                 case "GamePlay":
-                    this.Frame.Navigate(typeof(GamePlay), groupId);
+                    this.Frame.Navigate(typeof(GamePlay), this);
                     break;
                 case "FreePlay":
                     this.Frame.Navigate(typeof(SplitPage), groupId);

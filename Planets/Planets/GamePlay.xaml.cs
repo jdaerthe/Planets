@@ -23,6 +23,7 @@ namespace Planets
     public sealed partial class GamePlay : Page
     {
         Game game;
+        ItemsPage p;
         public GamePlay()
         {
             this.InitializeComponent();
@@ -38,7 +39,7 @@ namespace Planets
             if (YouLose.IsOpen) { 
                 YouLose.IsOpen = false; 
             }
-            //Frame.Navigate(typeof(ItemsPage));
+            this.Frame.Navigate(typeof(ItemsPage), "AllGroups");
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Planets
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
+           // p = (ItemsPage)e.Content;
             game.setup();
             
         }
