@@ -29,7 +29,7 @@ namespace Planets
         {
             Spaceship ship = w.getSpaceship();
             ship.image.Margin = new Thickness(ship.getPosition().x, ship.getPosition().y, 0, 0);
-            ship.image.RenderTransform = new RotateTransform() { Angle = 180*Math.Atan(ship.velocity.x / -ship.velocity.y) / Math.PI };
+            ship.image.RenderTransform = new RotateTransform() { Angle = 180*(Math.Atan2(ship.velocity.x, -ship.velocity.y)) / Math.PI};
         }
     }
 }
