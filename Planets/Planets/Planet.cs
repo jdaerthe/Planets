@@ -33,7 +33,6 @@ namespace Planets
              mass = radius * 5000000;
             //earth?
             isEarth = this.isEarth;
-           
 
             ellipse = new Ellipse();
             ellipse.Width = 2 * radius;

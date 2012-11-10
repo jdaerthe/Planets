@@ -24,9 +24,8 @@ namespace Planets
             w = new World();
             w.setSpaceship(new Spaceship());
 
-            for (int i = 0; i < 10; i++) w.addPlanet(new Planet(random,minradius,maxradius));
+          //  for (int i = 0; i < 10; i++) w.addPlanet(new Planet(random,minradius,maxradius));
             w.addPlanet(new Planet(random,2*minradius,maxradius, true));
-
         }
         public void step(object s, object ev)
         {

@@ -25,11 +25,11 @@ namespace Planets
             for (int i = 0; i < planets.Count; i++) page.ContentPanel1.Children.Add(planets[i].ellipse);
             page.ContentPanel1.Children.Add(w.getSpaceship().image);
         }
-        public static void update(MainPage page, World w)
+        public static void update(MainPage page, World w)   
         {
             Spaceship ship = w.getSpaceship();
             ship.image.Margin = new Thickness(ship.getPosition().x, ship.getPosition().y, 0, 0);
-            ship.image.RenderTransform = new RotateTransform() { Angle = Math.Atan(ship.velocity.y / ship.velocity.x) };
+            ship.image.RenderTransform = new RotateTransform() { Angle = 180*Math.Atan(ship.velocity.x / -ship.velocity.y) / Math.PI };
         }
     }
 }
