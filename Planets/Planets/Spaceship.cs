@@ -9,7 +9,6 @@ namespace Planets
     class Spaceship
     {
         private Vector position;
-        private float mass;
 
         public Spaceship()
         {
@@ -42,14 +41,6 @@ namespace Planets
         public float getY()
         {
             return position.y;
-        }
-        public void setMass(float m)
-        {
-            mass = m;
-        }
-        public float getMass()
-        {
-            return mass;
         }
     }
 }
