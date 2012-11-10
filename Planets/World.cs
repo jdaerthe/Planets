@@ -17,6 +17,15 @@ namespace Planets
             Physics.getNetForce(spaceship, planets);
         }
 
+        public void setSpaceship(Spaceship s)
+        {
+            spaceship = s;
+        }
+        public void getSpaceship()
+        {
+            return spaceship;
+        }
+
         public void addPlanet(Planet p)
         {
             planets.Add(p);
