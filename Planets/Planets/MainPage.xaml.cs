@@ -35,6 +35,7 @@ namespace Planets
         {
             Game game = new Game();
             game.setup();
+            
         }
     }
 }

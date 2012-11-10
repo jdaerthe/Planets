@@ -9,6 +9,11 @@ namespace Planets
     class Spaceship
     {
         private Vector position;
+<<<<<<< HEAD
+=======
+        private Vector lastposition;
+        private float mass;
+>>>>>>> 75b15107864fdca52fe632a44629f32dcc7985e9
 
         public Spaceship()
         {
@@ -20,6 +25,7 @@ namespace Planets
         }
         public void setPosition(Vector p)
         {
+            lastposition = position;
             position = p;
         }
         public Vector getPosition()
@@ -28,10 +34,12 @@ namespace Planets
         }
         public void setX(float x)
         {
+            this.lastposition.x = this.position.x;
             this.position.x = x;
         }
         public void setY(float y)
         {
+            this.lastposition.y = this.position.y;
             this.position.y = y;
         }
         public float getX()

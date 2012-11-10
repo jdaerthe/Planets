@@ -13,5 +13,9 @@ namespace Planets
         {
             
         }
+        public static void update(World w)
+        {
+
+        }
     }
 }
