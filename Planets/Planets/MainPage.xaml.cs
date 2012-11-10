@@ -33,7 +33,8 @@ namespace Planets
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            Game game = new Game();
+            game.setup();
         }
     }
 }

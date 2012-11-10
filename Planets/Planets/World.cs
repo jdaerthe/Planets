@@ -10,11 +10,10 @@ namespace Planets
     {
         private Spaceship spaceship;
         private List<Planet> planets;
-        private float time;
+        private float time = 0;
         private float timestep = 0.1f;
         
         public World() {
-            spaceship = new Spaceship();
             planets = new List<Planet>();
             
         }
