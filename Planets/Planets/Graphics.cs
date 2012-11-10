@@ -19,13 +19,13 @@ namespace Planets
     class Graphics
     {
         
-        public static void drawWorld(MainPage page, World w)
+        public static void drawWorld(GamePlay page, World w)
         {
             List<Planet> planets = w.getPlanets();
             for (int i = 0; i < planets.Count; i++) page.ContentPanel1.Children.Add(planets[i].ellipse);
             page.ContentPanel1.Children.Add(w.getSpaceship().image);
         }
-        public static void update(MainPage page, World w)   
+        public static void update(GamePlay page, World w)   
         {
             Spaceship ship = w.getSpaceship();
             ship.image.Margin = new Thickness(ship.getPosition().x, ship.getPosition().y, 0, 0);

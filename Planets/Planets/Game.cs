@@ -11,11 +11,11 @@ namespace Planets
     class Game
     {
         private World w;
-        private MainPage page;
+        private GamePlay page;
         private DispatcherTimer timer = new DispatcherTimer();
         private Random random;
         
-        public Game(MainPage page)
+        public Game(GamePlay page)
         {
             random = new Random();
             int minradius=30;
