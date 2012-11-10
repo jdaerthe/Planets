@@ -22,9 +22,11 @@ namespace Planets
     /// </summary>
     public sealed partial class GamePlay : Page
     {
+        Game game;
         public GamePlay()
         {
            // this.InitializeComponent();
+            game = new Game(this);
         }
 
         /// <summary>
@@ -34,8 +36,8 @@ namespace Planets
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Game game = new Game(this);
-            game.setup();
+            
+            if (_contentLoaded == true) game.setup();
             
         }
 

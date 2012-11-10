@@ -27,7 +27,7 @@ namespace Planets
             //radius
             radius = random.Next(minradius, maxradius);
             //position
-            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), -(int)Window.Current.Bounds.Height + 200 * (ylayer - 1));
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + maxradius, (int)Window.Current.Bounds.Width) - maxradius, -(int)Window.Current.Bounds.Height + 200 * (ylayer - 1));
             //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
             //mass
              mass = radius * 5000000;

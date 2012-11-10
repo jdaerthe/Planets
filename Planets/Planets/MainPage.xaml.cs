@@ -34,7 +34,13 @@ namespace Planets
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Frame.Navigate(typeof(Planets.GamePlay));
+            Frame myframe = new Frame();
+            Window.Current.Content = myframe;
+            if (!myframe.Navigate(typeof(GamePlay)))
+            {
+                throw new Exception("Failed to create initial page");
+            }
+            Window.Current.Activate();
         }
     }
 }
