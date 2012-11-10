@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
 
 namespace Planets
 {
@@ -10,9 +11,12 @@ namespace Planets
     {
         private Vector position;
         private float mass;
+        private Color color;
 
         public Planet()
         {
+            Random random = new Random();
+            color = Color.FromArgb((byte)0xff,(byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
 
         }
         public Planet(Vector p)
