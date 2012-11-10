@@ -142,6 +142,9 @@
     <Content Include="Assets\earth2.png" />
     <Content Include="Assets\mercury.png" />
     <Content Include="Assets\moon.png" />
+    <Content Include="Assets\one.png" />
+    <Content Include="Assets\three.png" />
+    <Content Include="Assets\two.png" />
     <Content Include="Assets\venus.png" />
     <Content Include="Assets\saturn.png" />
     <Content Include="Assets\bg.jpg" />
