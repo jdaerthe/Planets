@@ -23,7 +23,7 @@ namespace Planets
         private Color color;
         public float radius;
         public bool isEarth;
-        public static string[] images = {"mars.png", "jupiter.png", "venus.png", "moon.png", "mercury.png" };
+        public static string[] images = {"mars.png", "jupiter.png", "venus.png", "moon.png", "mercury.png", "moon2.png" };
 
         //constructor, sets all variables for a planet
         public Planet(Random random, int minradius, int maxradius, int ylayer, bool isEarth=false)
@@ -33,7 +33,7 @@ namespace Planets
             //radius
             radius = random.Next(minradius, maxradius);
             //position
-            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + (int)radius * 4, (int)Window.Current.Bounds.Width) - (int)radius * 4, -(int)Window.Current.Bounds.Height + radius * (2*ylayer + 2));
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + (int)radius * 4, (int)Window.Current.Bounds.Width) - (int)radius * 4, -(int)Window.Current.Bounds.Height + maxradius * (2*ylayer + 2));
             //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
             //mass
              mass = radius * 5000000;
@@ -73,6 +73,7 @@ namespace Planets
             ellipse.Margin = new Thickness(position.x, position.y, 0, 0);
             ellipse.StrokeThickness = 7.0;
             ellipse.Stroke = new SolidColorBrush(color);
+           // position.plus(new Vector(radius, radius));
         }
         public void setPosition(Vector p)
         {
