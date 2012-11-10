@@ -31,7 +31,7 @@ namespace Planets
         public void setup()
         {
             timer.Tick += new EventHandler<object>(step);
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 10);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 5);
             timer.Start();
             Graphics.drawWorld(page, w);
         }
