@@ -9,7 +9,9 @@ namespace Planets
 {
     class Physics
     {
-        public static Vector getNewPosition(Spaceship ship, List<Planet> planets, float time){
+        //get a new position based on ship and planets configurations
+        public static Vector getNewPosition(Spaceship ship, List<Planet> planets, float time)
+        {
             float xAcc = 0;
             float yAcc = 0;
             foreach (Planet p in planets){
@@ -22,27 +24,24 @@ namespace Planets
             return new Vector(xPos,yPos);
         }
 
-        public static float getGravity(Spaceship s,Planet p){
-<<<<<<< HEAD
-<<<<<<< HEAD
+        //helper to get gravity between two objects
+        public static float getGravity(Spaceship s,Planet p)
+        {
             return (p.getMass() * s.getMass())/(float)Math.Pow(getDistance(s,p),2);
-=======
-            return (p.getMass() * s.getMass())/Math.Pow(getDistance(s,p),2);
->>>>>>> 1ffac4b07aaa0ae2863efc6005d1ac4827db8a35
-=======
-            return (p.getMass() * s.getMass())/(float)Math.Pow(getDistance(s,p),2);
->>>>>>> 9c4ee95064ea7fa2834cefff82d79c8767d5d41b
         }
 
+        //helper to get distance between two objects
         private static float getDistance(Spaceship s, Planet p){
             return (float)Math.Sqrt((float)Math.Pow(p.getX() - s.getX(), 2) + (float)Math.Pow(p.getY() - s.getY(), 2));
         }
 
+        //helper to get x acceleration
         private static float Xacceleration(Spaceship s, Planet p)
         {
             return p.getMass() * (p.getX() - s.getX()) / (float)Math.Pow(getDistance(s, p), 3);
         }
 
+        //helper to get y acceleration
         private static float Yacceleration(Spaceship s, Planet p)
         {
             return p.getMass() * (p.getY() - s.getY()) / (float)Math.Pow(getDistance(s, p), 3);
