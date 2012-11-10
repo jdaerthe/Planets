@@ -48,6 +48,9 @@ namespace Planets
                 myBitmapImage.DecodePixelWidth = (int)radius * 2;
                 image.Source = myBitmapImage;
                 image.Margin = new Thickness(position.x, position.y, 0, 0);
+                image.IsHitTestVisible = true;
+                //Canvas.SetLeft(image, position.x);
+                //Canvas.SetTop(image, position.y);
                 image.Stretch = Stretch.Fill;
                 image.Height = (int)radius * 2;
                 image.Width = (int)radius * 2;
@@ -62,17 +65,19 @@ namespace Planets
                 myBitmapImage.DecodePixelWidth = (int)radius * 2;
                 image.Source = myBitmapImage;
                 image.Margin = new Thickness(position.x, position.y, 0, 0);
+               // Canvas.SetLeft(image, position.x);
+               // Canvas.SetTop(image, position.y);
                 image.Stretch = Stretch.Fill;
                 image.Height = (int)radius * 2;
                 image.Width = (int)radius * 2;
             }
 
-            ellipse = new Ellipse();
+            /*ellipse = new Ellipse();
             ellipse.Width = 2 * radius;
             ellipse.Height = 2 * radius;
             ellipse.Margin = new Thickness(position.x, position.y, 0, 0);
             ellipse.StrokeThickness = 7.0;
-            ellipse.Stroke = new SolidColorBrush(color);
+            ellipse.Stroke = new SolidColorBrush(color);*/
            // position.plus(new Vector(radius, radius));
         }
         public void setPosition(Vector p)

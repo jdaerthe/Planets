@@ -14,6 +14,23 @@
         <Grid.Background>
             <ImageBrush ImageSource="Assets/bg.jpg"/>
         </Grid.Background>
+        <Popup x:Name="YouWin" HorizontalOffset="200" VerticalOffset="10" IsLightDismissEnabled="True" Margin="394,330,-394,-330">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" BorderThickness="2" Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Width="200" Height="200">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="You Win!" FontSize="24.667" HorizontalAlignment="Center" />
+                    <Button Content="Close" Click="ClosePopupClicked" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Border>
+        </Popup>
+        <Popup x:Name="YouLose" HorizontalOffset="200" VerticalOffset="10" IsLightDismissEnabled="True" Margin="422,362,-422,-362">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" BorderThickness="2" Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Width="200" Height="200">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="You Lose!" FontSize="24.667" HorizontalAlignment="Center" />
+                    <Button Content="Close" Click="ClosePopupClicked" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Border>
+        </Popup>
+
     </Grid>
 
 </Page>

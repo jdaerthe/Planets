@@ -12,16 +12,18 @@ namespace Planets
         private List<Planet> planets;
         private float time = 0;
         public static float timestep = 0.01f;
+        public GamePlay game;
+        public Game parent;
         
-        public World() {
+        public World(GamePlay page, Game parent) {
             planets = new List<Planet>();
-            
+            game = page;
         }
         public List<Planet> getPlanets()
         {
             return planets;
         }
-        public void step()
+        public bool step()
         {
             time += timestep;
             Vector newpos = Physics.getNewPosition(spaceship, planets, timestep);
@@ -33,20 +35,23 @@ namespace Planets
                     if (p.isEarth && Physics.getDistance(spaceship, p) < p.radius)
                     {
                         youWin();
-                        return;
+                        return true;
                     }
                 }
-                youLoose();
-                return;
+                youLose();
+                return true;
             }
+            return false;
         }
 
         public void youWin()
         {
+            if (!game.YouWin1.IsOpen) { game.YouWin1.IsOpen = true; }
         }
 
-        public void youLoose()
+        public void youLose()
         {
+            if (!game.YouLose1.IsOpen) { game.YouLose1.IsOpen = true; }
         }
 
         public void setSpaceship(Spaceship s)

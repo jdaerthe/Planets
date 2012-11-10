@@ -12,7 +12,7 @@ namespace Planets
     {
         private World w;
         private GamePlay page;
-        private DispatcherTimer timer = new DispatcherTimer();
+        public DispatcherTimer timer = new DispatcherTimer();
         private Random random;
         
         public Game(GamePlay page)
@@ -21,7 +21,7 @@ namespace Planets
             int minradius=30;
             int maxradius=100;
             this.page = page;
-            w = new World();
+            w = new World(page, this);
             w.setSpaceship(new Spaceship());
             int ei = random.Next(0, 6);
             for (int i = 0; i < 7; i++) 
@@ -30,8 +30,14 @@ namespace Planets
         }
         public void step(object s, object ev)
         {
-            w.step();
-            Graphics.update(page, w);
+            if (w.step())
+            {
+                timer.Stop();
+            }
+            else
+            {
+                Graphics.update(page, w);
+            }
         }
 
         public void setup()

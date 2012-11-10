@@ -29,6 +29,18 @@ namespace Planets
             game = new Game(this);
         }
 
+        private void ClosePopupClicked(object sender, RoutedEventArgs e)
+        {
+            if (YouWin.IsOpen)
+            {
+                YouWin.IsOpen = false;
+            }
+            if (YouLose.IsOpen) { 
+                YouLose.IsOpen = false; 
+            }
+            //Frame.Navigate(typeof(ItemsPage));
+        }
+
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -45,6 +57,16 @@ namespace Planets
         {
             get { return ContentPanel; }
             set { ContentPanel = value; }
+        }
+        public Popup YouLose1
+        {
+            get { return YouLose; }
+            set { YouLose = value; }
+        }
+        public Popup YouWin1
+        {
+            get { return YouWin; }
+            set { YouWin = value; }
         }
     }
 }
