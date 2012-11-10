@@ -18,10 +18,11 @@ namespace Planets
             }
             ship.velocity = ship.velocity.plus(acc.times(time));
             return ship.getPosition().plus(ship.velocity.times(time));
+            
         }
 
         //helper to get distance between two objects
-        private static float getDistance(Spaceship s, Planet p){
+        private static float getDistance(Spaceship s, Planet p) {
             return (float)Math.Sqrt((float)Math.Pow(p.getX() - s.getX(), 2) + (float)Math.Pow(p.getY() - s.getY(), 2));
         }
 

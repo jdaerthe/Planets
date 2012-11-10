@@ -17,7 +17,6 @@ namespace Planets
         private Vector position;
         public Vector velocity;
         private Vector lastposition;
-        private float mass;
         public Image image;
 
         public Spaceship()
