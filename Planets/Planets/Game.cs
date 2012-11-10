@@ -20,7 +20,7 @@ namespace Planets
             this.page = page;
             w = new World();
             w.setSpaceship(new Spaceship());
-            for (int i = -5; i < 6; i++) w.addPlanet(new Planet(random, 50, 75, i));
+            for (int i = -5; i < 6; i++) w.addPlanet(new Planet(random, 30, 50, i));
         }
         public void step(object s, object ev)
         {
