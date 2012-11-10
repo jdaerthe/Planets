@@ -39,10 +39,10 @@ namespace Planets
             
         }
 
-        public Ellipse planet
+        public Grid ContentPanel1
         {
-            get { return planet1; }
-            set { planet1 = value; }
+            get { return ContentPanel; }
+            set { ContentPanel = value; }
         }
     }
 }

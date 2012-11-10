@@ -7,8 +7,5 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-    	<Ellipse x:Name="planet1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="133" Margin="245,264,0,0" Stroke="Black" VerticalAlignment="Top" Width="133"/>
-
-    </Grid>
+    <Grid x:Name="ContentPanel" Background="{StaticResource ApplicationPageBackgroundThemeBrush}"/>
 </Page>

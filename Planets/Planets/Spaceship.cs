@@ -3,22 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage;
+using Windows.Storage.Streams;
 
 namespace Planets
 {
     class Spaceship
     {
         private Vector position;
+        public Vector velocity;
         private Vector lastposition;
         private float mass;
+        public Image image;
 
         public Spaceship()
         {
+            position = new Vector(0, (int)Window.Current.Bounds.Height - 30);
+            velocity = new Vector(0, 0);
+            image = new Image();
+            BitmapImage myBitmapImage = new BitmapImage();
+            myBitmapImage.UriSource = new Uri("ms-appx:///Assets/SmallLogo.png");
 
-        }
-        public Spaceship(Vector p)
-        {
-            position = p;
+            myBitmapImage.DecodePixelWidth = 30;
+            image.Source = myBitmapImage;
+            image.Margin = new Thickness(position.x, position.y, 0, 0);
+            image.Stretch = Stretch.Fill;
+            image.Height = 30;
+            image.Width = 30;
         }
         public void setPosition(Vector p)
         {
@@ -46,14 +61,6 @@ namespace Planets
         public float getY()
         {
             return position.y;
-        }
-        public void setMass(float m)
-        {
-            mass = m;
-        }
-        public float getMass()
-        {
-            return mass;
         }
     }
 }

@@ -4,24 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Media;
 
 namespace Planets
 {
     class Planet
     {
         private Vector position;
+        public Ellipse ellipse;
         private float mass;
         private Color color;
+        private float radius;
 
-        public Planet()
+        //constructor, sets all variables for a planet
+        public Planet(Random random, int minradius, int maxradius, int ylayer)
         {
-            Random random = new Random();
+            //color
             color = Color.FromArgb((byte)0xff,(byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
-            position = new Vector(0,0);
-        }
-        public Planet(Vector p)
-        {
-            position = p;
+            //radius
+            radius = random.Next(minradius, maxradius);
+            //position
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), ylayer * maxradius * 2);
+            //mass
+            mass = radius * 1000000;
+
+            ellipse = new Ellipse();
+            ellipse.Width = 2 * radius;
+            ellipse.Height = 2 * radius;
+            ellipse.Margin = new Thickness(position.x, position.y, 0, 0);
+            ellipse.Fill = new SolidColorBrush(color);
         }
         public void setPosition(Vector p)
         {
@@ -54,6 +67,10 @@ namespace Planets
         public float getMass()
         {
             return mass;
+        }
+        public Color getColor()
+        {
+            return color;
         }
     }
 }
