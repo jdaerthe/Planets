@@ -3,30 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using 
 
 
 namespace Planets
 {
     class Physics
     {
-        public static float getNetForce(Spaceship ship, List<Planet> planets){
-            float totalForce=0;
+        public static Vector getNewPosition(Spaceship ship, List<Planet> planets, float time){
+            float xAcc = 0;
+            float yAcc = 0;
             foreach (Planet p in planets){
-                float currForce = 0;
-                float gravity = forceOfGravity(ship, p);
-                
-
+                xAcc += Xacceleration(ship, p);
+                yAcc += Yacceleration(ship, p);
             }
-            return totalForce;
+
+            float xPos = xAcc * (float)Math.Pow(time, 2);
+            float yPos = yAcc * (float)Math.Pow(time, 2);
+            return new Vector(xPos,yPos);
         }
 
-        public static float forceOfGravity(Spaceship s,Planet p){
-            return (p.getGravity() * p.getMass() * s.getMass())/(getDistance(s,p));
+        public static float getGravity(Spaceship s,Planet p){
+            return (p.getMass() * s.getMass())/Math.Pow(getDistance(s,p),2));
         }
 
-        private float getDistance(Spaceship s, Planet p){
+        private static float getDistance(Spaceship s, Planet p){
             return Math.Sqrt(Math.Pow(p.getX() - s.getX(), 2) + Math.Pow(p.getY() - s.getY(), 2));
+        }
+
+        private static float Xacceleration(Spaceship s, Planet p)
+        {
+            return p.getMass() * (p.getX() - s.getX()) / Math.Pow(getDistance(s, p), 3);
+        }
+
+        private static float Yacceleration(Spaceship s, Planet p)
+        {
+            return p.getMass() * (p.getY() - s.getY()) / Math.Pow(getDistance(s, p), 3);
         }
 
 
