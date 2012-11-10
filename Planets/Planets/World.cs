@@ -24,7 +24,8 @@ namespace Planets
         public void step()
         {
             time += timestep;
-            spaceship.setPosition(Physics.getNewPosition(spaceship, planets, timestep));
+            Vector newpos = Physics.getNewPosition(spaceship, planets, timestep);
+            if (newpos != null) spaceship.setPosition(newpos);
         }
 
         public void setSpaceship(Spaceship s)

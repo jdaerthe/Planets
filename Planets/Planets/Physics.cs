@@ -14,7 +14,9 @@ namespace Planets
         {
             Vector acc = new Vector(0, 0);
             foreach (Planet p in planets){
-                acc = acc.plus(getAcceleration(ship, p));
+                Vector acc2 = getAcceleration(ship, p);
+                if (acc2 == null) return null;
+                acc = acc.plus(acc2);
             }
             ship.velocity = ship.velocity.plus(acc.times(time));
             return ship.getPosition().plus(ship.velocity.times(time));
@@ -40,7 +42,9 @@ namespace Planets
         private static Vector getAcceleration(Spaceship s, Planet p)
         {
             Vector distance = p.getPosition().minus(s.getPosition());
-            float d3 = (float)Math.Pow(distance.getMagnitude(), 3);
+            float mag = distance.getMagnitude();
+            if (mag < p.radius) return null;
+            float d3 = (float)Math.Pow(mag, 3);
             return distance.times(p.getMass() / d3);
         }
 
