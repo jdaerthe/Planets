@@ -9,22 +9,28 @@ namespace Planets
 {
     class Game
     {
-        World w;
+        private World w;
         private DispatcherTimer timer = new DispatcherTimer();
+        
         public Game()
         {
             w = new World();
+            w.setSpaceship(new Spaceship(new Vector(200, 0)));
         }
-        public void step()
+        public void step(object s, object ev)
         {
-            
+            w.step();
         }
 
         public void setup()
         {
-            timer.Tick += new EventHandler<DispatcherTimer>(step);
-            timer.Interval = new TimeSpan(00, 1, 1);
+            timer.Tick += new EventHandler<object>(step);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             timer.Start();
+        }
+        public World getWorld()
+        {
+            return w;
         }
     }
 }
