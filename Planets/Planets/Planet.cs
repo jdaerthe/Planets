@@ -17,7 +17,7 @@ namespace Planets
         {
             Random random = new Random();
             color = Color.FromArgb((byte)0xff,(byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255));
-
+            position = new Vector(0,0);
         }
         public Planet(Vector p)
         {

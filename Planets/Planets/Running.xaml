@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Planets.MainPage"
+    x:Class="Planets.Running"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Planets"
@@ -8,7 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-    	<Ellipse x:Name="planet1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="133" Margin="245,264,0,0" Stroke="Black" VerticalAlignment="Top" Width="133"/>
 
     </Grid>
 </Page>
