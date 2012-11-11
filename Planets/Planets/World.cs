@@ -32,7 +32,7 @@ namespace Planets
             {
                 foreach (Planet p in planets)
                 {
-                    if (p.isEarth && spaceship.getPosition().minus(p.getPosition()).getMagnitude() < p.radius)
+                    if (p.isEarth && spaceship.getPosition().minus(p.getPosition()).getMagnitude() < p.radius + spaceship.image.ActualHeight)
                     {
                         youWin();
                         return true;

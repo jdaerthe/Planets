@@ -33,6 +33,7 @@ namespace Planets
             image.Stretch = Stretch.Fill;
             image.Height = 100;
             image.Width = 50;
+
         }
         public void setPosition(Vector p)
         {

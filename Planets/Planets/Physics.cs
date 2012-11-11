@@ -41,9 +41,10 @@ namespace Planets
         }
         private static Vector getAcceleration(Spaceship s, Planet p)
         {
-            Vector distance = p.getPosition().plus(new Vector(p.radius, p.radius)).minus(s.getPosition());
+
+            Vector distance = p.getPosition().minus(s.getPosition());
             float mag = distance.getMagnitude();
-            if (mag < p.radius)
+            if (mag < p.radius + s.image.ActualHeight)
             {
                 return null;
             }

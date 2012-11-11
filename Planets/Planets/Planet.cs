@@ -33,7 +33,7 @@ namespace Planets
             //radius
             radius = random.Next(minradius, maxradius);
             //position
-            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + (int)radius * 4, (int)Window.Current.Bounds.Width) - (int)radius * 4, -(int)Window.Current.Bounds.Height + maxradius * (2*ylayer + 2));
+            position = new Vector(random.Next(-(int)Window.Current.Bounds.Width + (int)maxradius * 2, (int)Window.Current.Bounds.Width) - (int)maxradius * 2, -(int)Window.Current.Bounds.Height + maxradius * (ylayer + 1));
             //position = new Vector(random.Next(-(int)Window.Current.Bounds.Width, (int)Window.Current.Bounds.Width), random.Next(-(int)Window.Current.Bounds.Height + maxradius * 2, (int)Window.Current.Bounds.Height - maxradius * 2));
             //mass
              mass = radius * 5000000;
@@ -45,15 +45,15 @@ namespace Planets
                 BitmapImage myBitmapImage = new BitmapImage();
                 myBitmapImage.UriSource = new Uri("ms-appx:///Assets/earth2.png");
 
-                myBitmapImage.DecodePixelWidth = (int)radius * 2;
+                myBitmapImage.DecodePixelWidth = (int)radius;
                 image.Source = myBitmapImage;
                 image.Margin = new Thickness(position.x, position.y, 0, 0);
                 image.IsHitTestVisible = true;
                 //Canvas.SetLeft(image, position.x);
                 //Canvas.SetTop(image, position.y);
                 image.Stretch = Stretch.Fill;
-                image.Height = (int)radius * 2;
-                image.Width = (int)radius * 2;
+                image.Height = (int)radius;
+                image.Width = (int)radius;
             }
             else
             {
@@ -62,16 +62,15 @@ namespace Planets
                 string name = images[random.Next(0, images.Count())];
                 myBitmapImage.UriSource = new Uri("ms-appx:///Assets/" + name);
 
-                myBitmapImage.DecodePixelWidth = (int)radius * 2;
+                myBitmapImage.DecodePixelWidth = (int)radius;
                 image.Source = myBitmapImage;
                 image.Margin = new Thickness(position.x, position.y, 0, 0);
                // Canvas.SetLeft(image, position.x);
                // Canvas.SetTop(image, position.y);
                 image.Stretch = Stretch.Fill;
-                image.Height = (int)radius * 2;
-                image.Width = (int)radius * 2;
+                image.Height = (int)radius;
+                image.Width = (int)radius;
             }
-
             /*ellipse = new Ellipse();
             ellipse.Width = 2 * radius;
             ellipse.Height = 2 * radius;

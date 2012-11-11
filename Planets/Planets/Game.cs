@@ -18,8 +18,8 @@ namespace Planets
         public Game(GamePlay page)
         {
             random = new Random();
-            int minradius=30;
-            int maxradius=100;
+            int minradius=70;
+            int maxradius=150;
             this.page = page;
             w = new World(page, this);
             w.setSpaceship(new Spaceship());
