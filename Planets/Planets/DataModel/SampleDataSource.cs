@@ -262,7 +262,7 @@ namespace Planets.Data
             var group1 = new SampleDataGroup("GamePlay",
                     "Play Game",
                     "",
-                    "Assets/DarkGray.png",
+                    "Assets/tile1.jpg",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
             this.AllGroups.Add(group1);
 
@@ -270,7 +270,7 @@ namespace Planets.Data
             var group2 = new SampleDataGroup("FreePlay",
                     "Free Play",
                     "",
-                    "Assets/LightGray.png",
+                    "Assets/tile2.jpg",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
             
             this.AllGroups.Add(group2);
@@ -278,14 +278,14 @@ namespace Planets.Data
             var group3 = new SampleDataGroup("Instructions",
                     "How to Play",
                     "",
-                    "Assets/MediumGray.png",
+                    "Assets/tile3.jpg",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
             
           
             var gettingStarted = new SampleDataItem("start",
                 "Getting Started",
                 "How to play?",
-                "image", "",
+                "Assets/one.png", "",
                 "Your rocket will be affected by the gravitational pull of the planets arround it. To start you must press anywhere on the screen, this controls how fast and in which direction the rocket will initially travel.",
                 group3);
             group3.Items.Add(gettingStarted);
@@ -293,7 +293,7 @@ namespace Planets.Data
             var objective = new SampleDataItem("objective",
                 "Objective",
                 "How do you win in arcade mode?",
-                "image", "",
+                "Assets/two.png", "",
                 "In order to win the game you must get your spaceship back to Earth without getting trapped by the gravitational pull of other planets.",
                 group3);
 
@@ -302,7 +302,7 @@ namespace Planets.Data
             var free = new SampleDataItem("free",
                 "Free Mode",
                 "Experimenting with gravity.",
-                "image", "",
+                "Assets/three.png", "",
                 "In the Free Mode you have the power to control the planet amount, gravitational pull, and relative sizes of planets to see how planets interact with the spaceship.",
                 group3);
             group3.Items.Add(free);
@@ -312,7 +312,7 @@ namespace Planets.Data
             var group4 = new SampleDataGroup("Live",
                     "Connect to Live",
                     "",
-                    "Assets/MediumGray.png",
+                    "Assets/xboxLive.jpg",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
 
             this.AllGroups.Add(group4);

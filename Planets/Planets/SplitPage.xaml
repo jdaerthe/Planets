@@ -28,7 +28,10 @@
     <Grid
         Style="{StaticResource LayoutRootStyle}"
         DataContext="{Binding Group}"
-        d:DataContext="{Binding AllGroups[0], Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}" Background="#FF38A820">
+        d:DataContext="{Binding AllGroups[0], Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}">
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/background.jpg"/>
+        </Grid.Background>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>

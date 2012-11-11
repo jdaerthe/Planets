@@ -139,10 +139,17 @@
     <None Include="Planets_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\background.jpg" />
     <Content Include="Assets\earth2.png" />
     <Content Include="Assets\mercury.png" />
     <Content Include="Assets\moon2.png" />
     <Content Include="Assets\moon.png" />
+    <Content Include="Assets\one.png" />
+    <Content Include="Assets\three.png" />
+    <Content Include="Assets\tile1.jpg" />
+    <Content Include="Assets\tile2.jpg" />
+    <Content Include="Assets\tile3.jpg" />
+    <Content Include="Assets\two.png" />
     <Content Include="Assets\venus.png" />
     <Content Include="Assets\saturn.png" />
     <Content Include="Assets\bg.jpg" />
@@ -159,6 +166,7 @@
     <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\MediumGray.png" />
     <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\xbox.jpg" />
     <Page Include="GamePlay.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
