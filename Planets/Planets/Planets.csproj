@@ -167,6 +167,7 @@
     <Content Include="Assets\MediumGray.png" />
     <Content Include="Assets\DarkGray.png" />
     <Content Include="Assets\xbox.jpg" />
+    <Content Include="Assets\xboxLive.jpg" />
     <Page Include="GamePlay.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
