@@ -35,12 +35,13 @@ namespace Planets
             if (YouWin.IsOpen)
             {
                 YouWin.IsOpen = false;
+                return;
             }
             if (YouLose.IsOpen) { 
                 YouLose.IsOpen = false;
-                this.Frame.Navigate(typeof(ItemsPage), "AllGroups");
+                
             }
-            
+            this.Frame.Navigate(typeof(ItemsPage), "AllGroups");
         }
 
         /// <summary>
@@ -64,6 +65,11 @@ namespace Planets
         {
             get { return YouLose; }
             set { YouLose = value; }
+        }
+        public Popup HighScore1
+        {
+            get { return HighScore; }
+            set { HighScore = value; }
         }
         public Popup YouWin1
         {

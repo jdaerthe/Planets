@@ -30,7 +30,15 @@
                 </StackPanel>
             </Border>
         </Popup>
-        <TextBlock x:Name="Score" HorizontalAlignment="Left" Margin="172,700,0,0" TextWrapping="Wrap" Text="Score: 0" VerticalAlignment="Top" FontSize="48" Foreground="OrangeRed"/>
+        <Popup x:Name="HighScore" HorizontalOffset="200" VerticalOffset="10" IsLightDismissEnabled="True" Margin="422,362,-422,-362">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" BorderThickness="2" Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Width="200" Height="200">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="New high score!" FontSize="24.667" HorizontalAlignment="Center" />
+                    <Button Content="Close" Click="ClosePopupClicked" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Border>
+        </Popup>
+        <TextBlock x:Name="Score" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Score: 0" VerticalAlignment="Top" FontSize="48" Foreground="OrangeRed"/>
 
     </Grid>
 
