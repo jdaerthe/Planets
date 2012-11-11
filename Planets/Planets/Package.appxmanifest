@@ -1,9 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+<<<<<<< HEAD
   <Identity Name="35e56ad6-851d-4fc3-ba89-0f06c7d4bee4" Publisher="CN=User" Version="1.0.0.0" />
+=======
+
+<<<<<<< HEAD
+  <Identity Name="35e56ad6-851d-4fc3-ba89-0f06c7d4bee4"
+            Publisher="CN=User"
+=======
+  <Identity Name="9ebf6312-054f-47a3-8c28-6895de29e527"
+            Publisher="CN=Casey"
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
+            Version="1.0.0.0" />
+
+>>>>>>> 7395723aea8da5fff561b8e20616c6f37c826d7a
   <Properties>
     <DisplayName>Planets</DisplayName>
+<<<<<<< HEAD
     <PublisherDisplayName>User</PublisherDisplayName>
+=======
+    <PublisherDisplayName>Casey</PublisherDisplayName>
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>

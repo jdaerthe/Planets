@@ -2,8 +2,12 @@
     x:Class="Planets.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<<<<<<< HEAD
     xmlns:local="using:Planets"
     xmlns:localData="using:Planets.Data">
+=======
+    xmlns:local="using:Planets">
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
 
     <Application.Resources>
         <ResourceDictionary>
@@ -16,9 +20,12 @@
                 <ResourceDictionary Source="Common/StandardStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+<<<<<<< HEAD
             <!-- Application-specific resources -->
 
             <x:String x:Key="AppName">Planets</x:String>
+=======
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -27,12 +27,22 @@ namespace Planets
         public static void drawWorld(GamePlay page, World w)
         {
             List<Planet> planets = w.getPlanets();
+<<<<<<< HEAD
             for (int i = 0; i < planets.Count; i++)
             {
                 if (planets[i].image != null) page.ContentPanel1.Children.Add(planets[i].image);
                 else page.ContentPanel1.Children.Add(planets[i].ellipse);
                 
             }
+=======
+<<<<<<< HEAD
+            for (int i = 0; i < planets.Count; i++) 
+                if (planets[i].image != null) page.ContentPanel1.Children.Add(planets[i].image);
+                else page.ContentPanel1.Children.Add(planets[i].ellipse);
+=======
+            for (int i = 0; i < planets.Count; i++) page.ContentPanel1.Children.Add(planets[i].ellipse);
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
+>>>>>>> 7395723aea8da5fff561b8e20616c6f37c826d7a
             page.ContentPanel1.Children.Add(w.getSpaceship().image);
         }
         public static void update(GamePlay page, World w)   

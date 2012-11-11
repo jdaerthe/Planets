@@ -34,10 +34,21 @@ namespace Planets
             this.page = page;
             w = new World(page, this);
             w.setSpaceship(new Spaceship());
+<<<<<<< HEAD
             int ei = random.Next(0, 6);
             for (int i = 0; i < 7; i++) 
+=======
+<<<<<<< HEAD
+            int ei = random.Next(0, 8);
+            for (int i = 0; i < 9; i++) 
+>>>>>>> 7395723aea8da5fff561b8e20616c6f37c826d7a
                 if (ei != i) w.addPlanet(new Planet(random,minradius,maxradius, i));
                 else w.addPlanet(new Planet(random,2*minradius,maxradius,i, true));
+=======
+
+            for (int i = 0; i < 10; i++) w.addPlanet(new Planet(random,minradius,maxradius, i));
+            w.addPlanet(new Planet(random,2*minradius,maxradius,random.Next(0, 9), true));
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
         }
         public void step(object s, object ev)
         {

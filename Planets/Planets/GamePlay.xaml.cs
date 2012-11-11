@@ -26,7 +26,11 @@ namespace Planets
         ItemsPage p;
         public GamePlay()
         {
+<<<<<<< HEAD
             this.InitializeComponent();
+=======
+           // this.InitializeComponent();
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
             game = new Game(this);
         }
 
@@ -51,8 +55,16 @@ namespace Planets
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+<<<<<<< HEAD
            // p = (ItemsPage)e.Content;
+=======
+            
+<<<<<<< HEAD
+>>>>>>> 7395723aea8da5fff561b8e20616c6f37c826d7a
             game.setup();
+=======
+            if (_contentLoaded == true) game.setup();
+>>>>>>> f629e5c28095f54b24d8872f88c38663475e65dc
             
         }
 
