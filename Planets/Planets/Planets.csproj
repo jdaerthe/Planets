@@ -145,6 +145,7 @@
     <Content Include="Assets\moon2.png" />
     <Content Include="Assets\moon.png" />
     <Content Include="Assets\one.png" />
+    <Content Include="Assets\rocketHopperIcon.jpg" />
     <Content Include="Assets\rocketSplash.png" />
     <Content Include="Assets\three.png" />
     <Content Include="Assets\tile1.jpg" />
