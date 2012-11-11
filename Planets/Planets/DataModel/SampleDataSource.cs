@@ -269,7 +269,7 @@ namespace Planets.Data
 
             var group2 = new SampleDataGroup("FreePlay",
                     "Free Play",
-                    "",
+                    "Coming Soon...",
                     "Assets/tile2.jpg",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
             

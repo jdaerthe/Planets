@@ -64,13 +64,13 @@ namespace Planets
                     this.Frame.Navigate(typeof(GamePlay), this);
                     break;
                 case "FreePlay":
-                    this.Frame.Navigate(typeof(SplitPage), groupId);
+                    //this.Frame.Navigate(typeof(SplitPage), groupId);
                     break;
                 case "Instructions":
                     this.Frame.Navigate(typeof(SplitPage), groupId);
                     break;
                 case "Live":
-                    this.Frame.Navigate(typeof(SplitPage), groupId);
+                    //this.Frame.Navigate(typeof(SplitPage), groupId);
                     break;
                 default:
                     break;
