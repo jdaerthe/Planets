@@ -37,9 +37,10 @@ namespace Planets
                 YouWin.IsOpen = false;
             }
             if (YouLose.IsOpen) { 
-                YouLose.IsOpen = false; 
+                YouLose.IsOpen = false;
+                this.Frame.Navigate(typeof(ItemsPage), "AllGroups");
             }
-            this.Frame.Navigate(typeof(ItemsPage), "AllGroups");
+            
         }
 
         /// <summary>
@@ -68,6 +69,11 @@ namespace Planets
         {
             get { return YouWin; }
             set { YouWin = value; }
+        }
+        public TextBlock Score1
+        {
+            get { return Score; }
+            set { Score = value; }
         }
     }
 }

@@ -14,10 +14,12 @@ namespace Planets
         private GamePlay page;
         public DispatcherTimer timer = new DispatcherTimer();
         private Random random;
+        public int score;
         
         public Game(GamePlay page)
         {
             random = new Random();
+            score = 0;
             int minradius=70;
             int maxradius=150;
             this.page = page;
@@ -30,13 +32,25 @@ namespace Planets
         }
         public void step(object s, object ev)
         {
-            if (w.step())
+            switch (w.step())
             {
-                timer.Stop();
-            }
-            else
-            {
-                Graphics.update(page, w);
+                case 0:
+                    Graphics.update(page, w);
+                    break;
+                case 1:
+                    timer.Stop();
+                    break;
+                case 2:
+                    timer.Stop();
+                    score++;
+                    w = new World(page, this);
+                    w.setSpaceship(new Spaceship());
+                    int ei = random.Next(0, 6);
+                    for (int i = 0; i < 7; i++) 
+                        if (ei != i) w.addPlanet(new Planet(random,70,150, i));
+                        else w.addPlanet(new Planet(random,2*70,150,i, true));
+                    break;
+
             }
         }
 

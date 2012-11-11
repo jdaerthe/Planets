@@ -14,16 +14,17 @@ namespace Planets
         public static float timestep = 0.01f;
         public GamePlay game;
         public Game parent;
-        
+
         public World(GamePlay page, Game parent) {
             planets = new List<Planet>();
+            this.parent = parent;
             game = page;
         }
         public List<Planet> getPlanets()
         {
             return planets;
         }
-        public bool step()
+        public int step()
         {
             time += timestep;
             Vector newpos = Physics.getNewPosition(spaceship, planets, timestep);
@@ -35,13 +36,13 @@ namespace Planets
                     if (p.isEarth && spaceship.getPosition().minus(p.getPosition()).getMagnitude() < p.radius + spaceship.image.ActualHeight)
                     {
                         youWin();
-                        return true;
+                        return 2;
                     }
                 }
                 youLose();
-                return true;
+                return 1;
             }
-            return false;
+            return 0;
         }
 
         public void youWin()

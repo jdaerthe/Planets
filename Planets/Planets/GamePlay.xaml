@@ -30,6 +30,7 @@
                 </StackPanel>
             </Border>
         </Popup>
+        <TextBlock x:Name="Score" HorizontalAlignment="Left" Margin="172,700,0,0" TextWrapping="Wrap" Text="Score: 0" VerticalAlignment="Top" FontSize="48" Foreground="OrangeRed"/>
 
     </Grid>
 
