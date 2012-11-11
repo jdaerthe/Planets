@@ -311,7 +311,7 @@ namespace Planets.Data
 
             var group4 = new SampleDataGroup("Live",
                     "Connect to Live",
-                    "",
+                    "Coming soon...",
                     "Assets/xboxLive.jpg",
                     "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
 

@@ -17,7 +17,7 @@
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Planets.App">
       <VisualElements DisplayName="Planet Hopper" Logo="rockeImage.png" SmallLogo="Assets\SmallLogo.png" Description="Utilize your basic aiming skills to land our hero home safely - but watch out for the gravitational pitfalls along the way!" ForegroundText="light" BackgroundColor="#3083AC">
         <DefaultTile ShowName="allLogos" ShortName="Planet Hopper" />
-        <SplashScreen Image="Assets\SplashScreen.png" />
+        <SplashScreen Image="Assets\rocketSplash.png" />
       </VisualElements>
     </Application>
   </Applications>
