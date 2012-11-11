@@ -168,6 +168,9 @@
     <Content Include="Assets\DarkGray.png" />
     <Content Include="Assets\xbox.jpg" />
     <Content Include="Assets\xboxLive.jpg" />
+    <Content Include="rockeImage.png" />
+    <Content Include="rocket.png" />
+    <Content Include="Space_Beautiful_Nebula_018058_.jpg" />
     <Page Include="GamePlay.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

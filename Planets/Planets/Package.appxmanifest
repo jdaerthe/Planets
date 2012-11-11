@@ -1,39 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-
-  <Identity Name="35e56ad6-851d-4fc3-ba89-0f06c7d4bee4"
-            Publisher="CN=User"
-            Version="1.0.0.0" />
-
+  <Identity Name="35e56ad6-851d-4fc3-ba89-0f06c7d4bee4" Publisher="CN=User" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Planets</DisplayName>
     <PublisherDisplayName>User</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
     <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="Planets.App">
-        <VisualElements
-            DisplayName="Planets"
-            Logo="Assets\Logo.png"
-            SmallLogo="Assets\SmallLogo.png"
-            Description="Planets"
-            ForegroundText="light"
-            BackgroundColor="#464646">
-            <DefaultTile ShowName="allLogos" />
-            <SplashScreen Image="Assets\SplashScreen.png" />
-        </VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Planets.App">
+      <VisualElements DisplayName="Planet Hopper" Logo="rockeImage.png" SmallLogo="Assets\SmallLogo.png" Description="Utilize your basic aiming skills to land our hero home safely - but watch out for the gravitational pitfalls along the way!" ForegroundText="light" BackgroundColor="#3083AC">
+        <DefaultTile ShowName="allLogos" ShortName="Planet Hopper" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
     </Application>
   </Applications>
   <Capabilities>
